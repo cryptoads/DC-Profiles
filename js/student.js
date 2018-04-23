@@ -24,25 +24,25 @@ var createStudents = function(){$.get('https://s3.amazonaws.com/dc-profiles/Stud
         var randomStudents = filteredStudents.sort(function(a,b){return 0.5 - Math.random()});
         //create bootstrap cards and modals for each student being displayed
         randomStudents.forEach(function (student) {
-            finalHtml +='<div class="card my-2 mx-3" style="width: 18rem;"><div class="card-body d-flex flex-column"><h5 class="card-title">'+student.fullName + 
-                            '</h5><h6 class="card-subtitle mb-2 text-muted">'+student.missionStatement+'</h6><p class ="card-text">'+ student.fullBio + 
-                            '</p><button class ="btn btn-primary mt-auto" type="button" data-toggle="modal" data-target="#'+student.id+'">Full Information</button></div></div>'
-            finalHtml+='<div class="modal fade" id="'+student.id+'" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">'
-            finalHtml+='<div class="modal-dialog modal-dialog-centered" role="document">'
-            finalHtml+='<div class="modal-content">'
-            finalHtml+='<div class="modal-header d-block">'
-            finalHtml+='<h5 class="modal-title" id="exampleModalLongTitle">'+student.fullName+'</h5>'
-            finalHtml+='<h6 class="modal-subtitle text-muted">'+student.missionStatement+'</h6>'
-            finalHtml+='<button type="button" class="close" data-dismiss="modal" aria-label="Close">'
-            finalHtml+='<span aria-hidden="true">&times;</span>'
-            finalHtml+='</button></div>'
-            finalHtml+='<div class="modal-body d-block">'
-            finalHtml+=''+student.portfolioUrl+'<br>'+student.githubUrl+'<br>'+student.linkedinUrl+'<br>'+student.fullBio+'<br>'+student.email+'<br>'+'</div>'
-            finalHtml+='<div class="modal-footer">'
-            finalHtml+='<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>'
-            finalHtml+='</div></div></div></div>'
+            finalHtml+='<div class="card my-2 mx-3" style="width: 18rem;"><div class="card-body d-flex flex-column"><h5 class="card-title">'+student.fullName;
+            finalHtml+= '</h5><h6 class="card-subtitle mb-2 text-muted">'+student.missionStatement+'</h6><p class ="card-text">'+ student.fullBio;
+            finalHtml+= '</p><button class ="btn btn-primary mt-auto" type="button" data-toggle="modal" data-target="#'+student.id+'">Full Information</button></div></div>';
+            finalHtml+='<div class="modal fade" id="'+student.id+'" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">';
+            finalHtml+='<div class="modal-dialog modal-dialog-centered" role="document">';
+            finalHtml+='<div class="modal-content">';
+            finalHtml+='<div class="modal-header d-block">';
+            finalHtml+='<h5 class="modal-title" id="exampleModalLongTitle">'+student.fullName+'</h5>';
+            finalHtml+='<h6 class="modal-subtitle text-muted">'+student.missionStatement+'</h6>';
+            finalHtml+='<button type="button" class="close" data-dismiss="modal" aria-label="Close">';
+            finalHtml+='<span aria-hidden="true">&times;</span>';
+            finalHtml+='</button></div>';
+            finalHtml+='<div class="modal-body d-block">';
+            finalHtml+=''+student.portfolioUrl+'<br>'+student.githubUrl+'<br>'+student.linkedinUrl+'<br>'+student.fullBio+'<br>'+student.email+'<br>'+'</div>';
+            finalHtml+='<div class="modal-footer">';
+            finalHtml+='<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>';
+            finalHtml+='</div></div></div></div>';
         });
-        
+
         //send the cards to the page
         $('.students').append(finalHtml);
     });
