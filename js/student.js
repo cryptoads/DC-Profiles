@@ -1,18 +1,11 @@
-
 $(function(){
-
-
 //render students function using ajax get call
 var createStudents = function(){$.get('https://s3.amazonaws.com/dc-profiles/Students.json', function(data){
         //wipe students div
         $('.students').empty();
         var finalHtml = "";
         var modalHtml = "";
-        var searchFilter = "";
-        //check for default search string
-        if($('.search').val() !== 'Search for students'){
-            var searchFilter = $('.search').val().toLowerCase();
-        }
+        var searchFilter = $('.search').val().toLowerCase();
         //create a filtered array of students based on search entry
         var filteredStudents = data.filter(function (el){
             var foundInName    = el.firstName.toLowerCase().indexOf(searchFilter) > -1;
