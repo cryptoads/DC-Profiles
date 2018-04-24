@@ -1,6 +1,6 @@
 body {
     font-family: 'Raleway', sans-serif;
-    text-align: center;
+
 }
 
  .bg {
@@ -8,11 +8,12 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 1450px;
-} 
+}
 
 
 .jumbotron {
     background: rgba(32, 64, 96, 0.6)
+
     /*background: transparent; */
 }
 
@@ -21,6 +22,7 @@ body {
     width: 60%;
     margin: 0 auto;
     color: #FFF;
+    text-align: center;
 }
 
 .main-container img {
@@ -39,19 +41,7 @@ body {
     margin-top: 30px;
 }
 
-
-
-
-
-
-
-
 footer {
     margin-top: 40px;
 }
-
-
-/* Login page */
-
-
 
